@@ -1,0 +1,54 @@
+<div id="outPopUp" class="container mt-5">
+    <div class="container mt-5">
+    
+      <img src="/assets/9.jpeg" style="width:60%; height: 200px;">
+  <h3>ARE YOU LOOKING FOR JOINING OUR FUN RUN EVENT?</h3>
+  <p>REGISTER NOW!</p>
+
+
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      
+        <form  [formGroup]="runnerForm" >
+      
+          <div class="col-lg-6 mt-2">
+            <input type="text" class="form-control" formControlName="runnerName" placeholder="Enter Runner Name">
+          </div>
+      
+          <div class="col-lg-6 mt-2">
+            <input type="text" class="form-control"  formControlName="age" placeholder="Enter Age">
+          </div>
+      
+          <div class="col-lg-6 mt-2">
+            <input type="text" class="form-control"  formControlName="phone" placeholder="Enter Phone Number">
+          </div>
+
+          <div class="col-lg-6 mt-2">
+            <input type="text" class="form-control"  formControlName="address" placeholder="Enter Address">
+          </div>
+      
+          <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="runnerSubmit()">
+      <button class="btn btn-primary">Submit Registration</button>
+          </div>
+      
+        
+          <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="runnerUpdate()">
+            <button class="btn btn-primary btn-sm">Update</button>
+        </div>
+    
+        </form>
+      
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
